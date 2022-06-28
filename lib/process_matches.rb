@@ -25,7 +25,7 @@ def print_top_teams(match_results)
   rankings = Hash.new(0)
   matchday = 0
 
-  File.open(match_results).each do |match|
+  File.foreach(match_results) do |match|
     parsed_match = parse_match(match)
 
     team1, team2 = parsed_match
